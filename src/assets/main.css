@@ -1,0 +1,80 @@
+@import './base.css';
+
+input:focus,
+select:focus,
+button:focus
+article:focus
+ {
+  outline: 2px solid #fff; 
+}
+
+input,
+select,
+button {
+  border-radius: 0.5rem; 
+  padding: 0.5rem 1rem; 
+  margin: 0.5rem; 
+  border: 1px solid #ccc; 
+  font-size: 1rem; 
+  background-color: #ffffff; 
+  color: #333; 
+  transition: background-color 0.3s, border-color 0.3s; 
+}
+
+input {
+  width: 200px;
+}
+
+select {
+  appearance: none; /* Убираем стрелку браузера */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 8 8"><path d="M0 0l4 4 4-4H0z"/></svg>'); /* Своя стрелка */
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem; /* Отступ для стрелки */
+}
+
+button {
+  background-color: #3c3e44;
+  color: #ffffff; 
+  cursor: pointer; 
+  border: none; 
+}
+
+button:hover {
+  background-color: #50525a;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  margin: 0 0.5rem;
+}
+
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination span {
+  margin: 0 1rem;
+}
