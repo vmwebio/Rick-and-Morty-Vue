@@ -15,34 +15,37 @@
 
 Проект организован в соответствии со следующей структурой:
 
+- Файл `App.vue` содержит основную логику приложения.
 - В папке `api` находится модуль для взаимодействия с API Rick and Morty.
-- В папке `components` содержатся компоненты UI, такие как карточка персонажа, кнопка, текстовое поле, кнопка вверх и выпадающий список.
+- В папке `components` содержатся компоненты UI, такие как карточка персонажа, пагинация, кнопка, текстовое поле, кнопка вверх и выпадающий список.
 - В папке `layouts` находятся компоненты, определяющие структуру страницы, такие как заголовок и подвал.
 - Файл `main.css` в папке `assets` содержит глобальные стили приложения.
 
 
-/src
-  /api
-    - characters.js
-  /components
-    /ui
-      - Button.vue
-      - Input.vue
-      - Select.vue
-	  - ScrollToTop.vue
-    - CharacterCard.vue
-  /layouts
-    - Header.vue
-    - Footer.vue
-  /assets
-    - main.css
-	- base.css
-/App.vue
-/main.js
+- **src/**
+  - **api/**
+    - `characters.js`
+  - **components/**
+    - **ui/**
+      - `Button.vue`
+      - `Input.vue`
+      - `Select.vue`
+      - `ScrollToTop.vue`
+    - `CharacterCard.vue`
+    - `Pagination.vue`
+  - **layouts/**
+    - `Header.vue`
+    - `Footer.vue`
+  - **assets/**
+    - `main.css`
+    - `base.css`
+- `App.vue`
+- `main.js`
+
 
 ## Использование
 
 Для запуска проекта необходимо установить зависимости и запустить сервер:
 
-npm install
+npm install  
 npm run serve
