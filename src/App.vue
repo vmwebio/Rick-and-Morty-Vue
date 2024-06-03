@@ -37,8 +37,11 @@
         />
       </section>
 
+      <!-- Loader -->
+      <Loader :isLoading="isLoading" />
+
       <!-- Карточки персонажей -->
-      <section class="characters">
+      <section class="characters" v-if="!isLoading">
         <CharacterCard
           v-for="character in characters"
           :key="character.id"
@@ -74,6 +77,7 @@ import Select from "./components/ui/Select.vue";
 import Button from "./components/ui/Button.vue";
 import Pagination from "./components/Pagination.vue";
 import ScrollToTop from "./components/ui/ScrollToTop.vue";
+import Loader from './components/ui/Loader.vue';
 
 export default {
   components: {
@@ -85,6 +89,7 @@ export default {
     Button,
     ScrollToTop,
     Pagination,
+    Loader
   },
   setup() {
     const characters = ref([]); // Список персонажей
@@ -96,6 +101,7 @@ export default {
       name: "", // по имени
       status: "", // по статусу
     });
+    const isLoading = ref(false);
 
     // Варианты фильтра по статусу персонажа
     const statusOptions = [
@@ -115,13 +121,21 @@ export default {
 
     // Получить список персонажей
     const fetchAndSetCharacters = async () => {
-      const data = await fetchCharacters(
+      isLoading.value = true;
+
+      try {
+        const data = await fetchCharacters(
         page.value,
         filters.value.name,
         filters.value.status
       );
       characters.value = data.results.slice(0, itemsPerPage.value); // Установка списка персонажей с учётом количества на странице
       hasMorePages.value = data.info.next !== null; // Установка флага наличия следующих страниц
+      } catch (error) {
+        console.error('Ошибка при загрузке персонажей:', error);
+      } finally {
+        isLoading.value = false;
+      }
     };
 
     // Применение фильтров и обновление списка персонажей
@@ -152,6 +166,7 @@ export default {
       characters,
       page,
       hasMorePages,
+      isLoading,
       itemsPerPage,
       filters,
       statusOptions,
