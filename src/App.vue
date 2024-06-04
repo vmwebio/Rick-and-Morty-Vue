@@ -154,7 +154,7 @@ export default {
 .characters {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
 }
 </style>
