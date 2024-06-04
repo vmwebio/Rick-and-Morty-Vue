@@ -35,7 +35,7 @@
       - `Loader.vue`
     - `CharacterCard.vue`
     - `Pagination.vue`
-  - **components/**
+  - **composable/**
     - `useCharacters.js`
   - **layouts/**
     - `Header.vue`
