@@ -5,7 +5,7 @@
 
     <main class="main-content">
       <!-- Фильтрация по имени и статусу -->
-      <div class="filters">
+      <section class="filters">
         <Input
           v-model="filters.name"
           placeholder="Имя"
@@ -17,7 +17,7 @@
           @change="applyFilters"
         />
         <Button text="Применить" @click="applyFilters" />
-      </div>
+      </section>
 
       <!-- Пагинация  вверху -->
       <Pagination
@@ -37,7 +37,7 @@
         />
       </section>
 
-      <!-- Loader -->
+      <!-- Загрузчик -->
       <Loader :isLoading="isLoading" />
 
       <!-- Список персонажей -->

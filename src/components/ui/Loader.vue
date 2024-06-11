@@ -1,7 +1,7 @@
 <template>
-    <div class="loader" v-if="isLoading">
+    <section class="loader" v-if="isLoading">
       <div class="spinner"></div>
-    </div>
+    </section>
   </template>
   
   <script>
